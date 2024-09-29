@@ -1,0 +1,36 @@
+import java.util.*;
+public class FrogCount{
+    public static void main(String[] args){
+        Scanner sc = new Scanner(System.in);
+        String s = sc.nextLine();
+        int n = sc.nextInt();
+    int[] startIdx = new int[n];
+        int[] endIdx = new int[n];
+        for (int i = 0;i<n;i++) {
+            startIdx[i] = sc.nextInt();
+        }
+        for (int i = 0; i < n; i++) {
+            endIdx[i] = sc.nextInt();
+        }
+        int[] result = new int[n];
+        for (int i = 0; i < n; i++) {
+            int start = startIdx[i] - 1;
+            int end = endIdx[i] - 1;
+            int count = 0;
+            boolean barFound = false;
+        for (int j = start; j <= end; j++) {
+                if (s.charAt(j) == '|') {
+                    if (barFound) {
+                        result[i] += count;
+                    }
+                    count = 0;
+                    barFound = true;
+                } else if (s.charAt(j) == '*') {
+                    if (barFound) {
+                        count++;
+                    }}
+            }
+        }
+        for(int r:result) {
+            System.out.println(r);
+        }}}
